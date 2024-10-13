@@ -1,16 +1,17 @@
 import Link from "next/link";
 import React from "react";
-import PostResponse from "@/interfaces/interface";
+import prisma from "@/lib/db";
 
 const PostsList = async () => {
   await new Promise((resolve) => setTimeout(resolve, 1000));
-  const response = await fetch("https://dummyjson.com/posts?limit=10");
-  const data: PostResponse = await response.json();
+  // const response = await fetch("https://dummyjson.com/posts?limit=10");
+  // const data: PostResponse = await response.json();
   // console.log(data);
+  const posts = await prisma.post.findMany();
   return (
     <div>
       <ul>
-        {data.posts.map((post) => {
+        {posts.map((post) => {
           return (
             <li key={post.id} className="mb-3">
               <Link href={`/posts/${post.id}`} className="text-2xl">
