@@ -12,7 +12,7 @@ const PostsList = async () => {
       <ul>
         {data.posts.map((post) => {
           return (
-            <li key={post.id} className="mb-3 hover:bg-zinc-200">
+            <li key={post.id} className="mb-3">
               <Link href={`/posts/${post.id}`} className="text-2xl">
                 {post.title}
               </Link>

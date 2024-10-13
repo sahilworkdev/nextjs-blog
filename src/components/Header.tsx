@@ -2,23 +2,20 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
 
 const navLinks = [
   { name: "Home", href: "/" },
-
   { name: "Posts", href: "/posts" },
-  { name: "Create Post", href: "/createpost" },
+  { name: "Create post", href: "/create-post" },
 ];
 
 const Header = () => {
   const pathname = usePathname();
-  // console.log(pathname);
+  console.log(pathname);
 
   return (
     <header className="flex justify-between items-center py-4 px-7 border-b">
       <Link href="/">
-        {" "}
         <Image
           src="/logo.png"
           width="40"
@@ -35,7 +32,9 @@ const Header = () => {
                 <Link
                   href={navLink.href}
                   className={` ${
-                    pathname === navLink.href ? "text-zinc-900" : "text-zinc-400"
+                    pathname === navLink.href
+                      ? "text-zinc-900"
+                      : "text-zinc-400"
                   }`}
                 >
                   {navLink.name}

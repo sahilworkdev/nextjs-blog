@@ -6,3 +6,5 @@
 - [x] Create API to fetch data
 - [x] Dynamic Routes
 - [x] Add Suspense
+- [x] Create Post Page
+- [x] Kinde Authentication
